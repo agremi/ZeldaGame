@@ -1,0 +1,14 @@
+/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/bin/Debug/net8.0/ZeldaGame
+/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/bin/Debug/net8.0/ZeldaGame.deps.json
+/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/bin/Debug/net8.0/ZeldaGame.runtimeconfig.json
+/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/bin/Debug/net8.0/ZeldaGame.dll
+/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/bin/Debug/net8.0/ZeldaGame.pdb
+/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/obj/Debug/net8.0/ZeldaGame.GeneratedMSBuildEditorConfig.editorconfig
+/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/obj/Debug/net8.0/ZeldaGame.AssemblyInfoInputs.cache
+/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/obj/Debug/net8.0/ZeldaGame.AssemblyInfo.cs
+/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/obj/Debug/net8.0/ZeldaGame.csproj.CoreCompileInputs.cache
+/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/obj/Debug/net8.0/ZeldaGame.dll
+/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/obj/Debug/net8.0/refint/ZeldaGame.dll
+/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/obj/Debug/net8.0/ZeldaGame.pdb
+/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/obj/Debug/net8.0/ZeldaGame.genruntimeconfig.cache
+/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/obj/Debug/net8.0/ref/ZeldaGame.dll
