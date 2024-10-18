@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/ZeldaGame.csproj": {}
+    "/workspaces/ZeldaGame/ZeldaGame.csproj": {}
   },
   "projects": {
-    "/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/ZeldaGame.csproj": {
+    "/workspaces/ZeldaGame/ZeldaGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/ZeldaGame.csproj",
+        "projectUniqueName": "/workspaces/ZeldaGame/ZeldaGame.csproj",
         "projectName": "ZeldaGame",
-        "projectPath": "/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/ZeldaGame.csproj",
-        "packagesPath": "/home/mirko/.nuget/packages/",
-        "outputPath": "/home/mirko/Scrivania/Progetti/tomorrow_devs/ZeldaGame/obj/",
+        "projectPath": "/workspaces/ZeldaGame/ZeldaGame.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/ZeldaGame/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/mirko/.nuget/NuGet/NuGet.Config"
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -53,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.107/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

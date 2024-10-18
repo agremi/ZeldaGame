@@ -1,0 +1,119 @@
+[
+    {
+        "Name": "Room1",
+        "Description": "The room description",
+        "Items": [
+            {
+                "Name": "first item",
+                "Value": 0
+            }
+        ],
+        "Npc": {
+            "Name": "",
+            "WeaponToKillIt": "",
+            "IsEvil": true
+        },
+        "ConnectedRooms": ["Room2"],
+        "IsHidden": false
+    },
+    {
+            "Name": "Room2",
+            "Description": "",
+            "Items": [
+                {
+                    "Name": "Golden egg",
+                    "Value": 500000
+                }
+            ],
+            "Npc": {
+                "Name": "",
+                "WeaponToKillIt": "",
+                "IsEvil": true
+            },
+            "ConnectedRooms": []
+        },
+        {
+            "Name": "Room3",
+            "Description": "",
+            "Items": [
+                {
+                    "Name": "Magic shield",
+                    "Value": 0
+                }
+            ],
+            "Npc": {
+                "Name": "",
+                "WeaponToKillIt": "",
+                "IsEvil": true
+            },
+            "ConnectedRooms": []
+        },
+        {
+            "Name": "Room4",
+            "Description": "",
+            "Items": [
+                {
+                    "Name": "Golden chalice",
+                    "Value": 500000
+                }
+            ],
+            "Npc": {
+                "Name": "",
+                "WeaponToKillIt": "",
+                "IsEvil": true
+            },
+            "ConnectedRooms": []
+        },
+        {
+            "Name": "Room5",
+            "Description": "",
+            "Items": [],
+            "Npc": {
+                "Name": "Medusa",
+                "WeaponToKillIt": "Magic shield"
+            },
+            "ConnectedRooms": []
+        },
+        {
+            "Name": "Room6",
+            "Description": "",
+            "Items": [],
+            "Npc": {
+                "Name": "Mr. Dracula",
+                "WeaponToKillIt": "Silver dagger"
+            },
+            "ConnectedRooms": []
+        },
+        {
+            "Name": "Room7",
+            "Description": "",
+            "Items": [
+                {
+                    "Name": "Silver dagger",
+                    "Value": 0
+                }
+            ],
+            "Npc": {
+                "Name": "",
+                "WeaponToKillIt": "",
+                "IsEvil": true
+            },
+            "ConnectedRooms": []
+        },
+        {
+            "Name": "Room8",
+            "Description": "",
+            "Items": [
+                {
+                    "Name": "Mathematical proof",
+                    "Value": 1000000
+                }
+            ],
+            "Npc": {
+                "Name": "",
+                "WeaponToKillIt": "",
+                "IsEvil": false
+            },
+            "ConnectedRooms": []
+        }
+]
