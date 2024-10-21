@@ -13,7 +13,7 @@
             "WeaponToKillIt": "",
             "IsEvil": true
         },
-        "ConnectedRooms": ["Room2"],
+        "ConnectedRooms": ["","Room2","",""],
         "IsHidden": false
     },
     {
@@ -30,7 +30,7 @@
                 "WeaponToKillIt": "",
                 "IsEvil": true
             },
-            "ConnectedRooms": []
+            "ConnectedRooms": ["","","","Room1"]
         },
         {
             "Name": "Room3",
