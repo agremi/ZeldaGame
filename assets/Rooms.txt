@@ -18,7 +18,7 @@
     },
     {
             "Name": "Room2",
-            "Description": "",
+            "Description": "The second room description",
             "Items": [
                 {
                     "Name": "Golden egg",

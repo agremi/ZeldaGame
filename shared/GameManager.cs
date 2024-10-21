@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using ZeldaGame.models;
 
 namespace ZeldaGame.shared;
@@ -72,32 +73,34 @@ public static class GameManager
         return currentGame;
     }
 
-    public static Room HandleMoveCommand(Game currentGame, string commandParameter)
+    public static Game HandleMoveCommand(Game currentGame, string commandParameter)
     {
         switch (commandParameter)
         {
             case Constants.MOVE_NORTH:
-                HandleDirection(currentGame, commandParameter, 0);
+                currentGame = HandleDirection(currentGame, commandParameter, 0);
                 break;
 
             case Constants.MOVE_WEST:
-                HandleDirection(currentGame, commandParameter, 1);
+                currentGame = HandleDirection(currentGame, commandParameter, 1);
                 break;
 
             case Constants.MOVE_SOUTH:
-                HandleDirection(currentGame, commandParameter, 2);
+                currentGame = HandleDirection(currentGame, commandParameter, 2);
                 break;
 
             case Constants.MOVE_EAST:
-                HandleDirection(currentGame, commandParameter, 3);
+                currentGame = HandleDirection(currentGame, commandParameter, 3);
                 break;
 
             default:
                 break;
         }
+
+        return currentGame;
     }
 
-    private static void HandleDirection(Game currentGame, string commandParameter, int roomIndex)
+    private static Game HandleDirection(Game currentGame, string commandParameter, int roomIndex)
     {
         if (currentGame?.CurrentRoom?.ConnectedRooms != null &&
             roomIndex >= 0 &&
@@ -113,9 +116,62 @@ public static class GameManager
         }
         else
         {
-            Console.ForegroundColor=ConsoleColor.DarkRed;
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine($"Move {commandParameter} is not possible");
         }
+        return currentGame;
+    }
+    public static Game HandleUserCommand(string userCommand, Game game)
+    {
+        string mainCommand = Regex.Match(userCommand, Constants.MOVE_REGEX).ToString();
+        string commandParameter;
+
+        switch (mainCommand)
+        {
+            case Constants.MOVE_COMMAND:
+                commandParameter = Regex.Match(userCommand, @"NORTH|WEST|SOUTH|EAST").ToString();
+                game = GameManager.HandleMoveCommand(game, commandParameter);
+                break;
+
+            case Constants.PICK_COMMAND:
+                Console.WriteLine(userCommand);
+                game = HandlePickCommand(game, userCommand);
+                break;
+
+            case Constants.DROP_COMMAND:
+                break;
+
+            case Constants.EXIT_COMMAND:
+                game.CurrentCommand = Constants.EXIT_COMMAND;
+                break;
+
+            case Constants.ATTACK_COMMAND:
+                break;
+
+            case Constants.LOOK_COMMAND:
+                break;
+
+            default:
+                break;
+        }
+
+        return game;
     }
 
+    private static Game HandlePickCommand(Game game, string userCommand)
+    {
+        string commandParameter = userCommand.TrimStart().TrimEnd().Substring(4);
+        string itemToPick = commandParameter.TrimStart().TrimEnd();
+
+        foreach (GameItem item in game.CurrentRoom.Items)
+        {
+            if (item.Name == itemToPick)
+            {
+                game.PlayerBag.Add(item);
+                game.CurrentRoom.Items.Remove(item);
+            }
+        }
+
+        return game;
+    }
 }

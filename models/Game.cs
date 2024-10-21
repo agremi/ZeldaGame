@@ -20,6 +20,7 @@ public class Game
 
     public List<Room>? RoomsList { get; set; }
     public float PlayerCash { get; set; }
+    public string CurrentCommand { get; set; } = string.Empty;
 
     public void GetRoomDescription()
     {
@@ -45,7 +46,7 @@ public class Game
             {
                 // NORD
                 case 0:
-                    if (CurrentRoom.ConnectedRooms[0] != null)
+                    if (CurrentRoom.ConnectedRooms[0] != string.Empty)
                     {
                         sb.Append("There's a rooom to your NORTH.");
                     }
@@ -53,7 +54,7 @@ public class Game
 
                 // EST
                 case 1:
-                    if (CurrentRoom.ConnectedRooms[1] != null)
+                    if (CurrentRoom.ConnectedRooms[1] != string.Empty)
                     {
                         sb.Append("There's a rooom to your EAST.");
                     }
@@ -61,7 +62,7 @@ public class Game
 
                 // SUD
                 case 2:
-                    if (CurrentRoom.ConnectedRooms[2] != null)
+                    if (CurrentRoom.ConnectedRooms[2] != string.Empty)
                     {
                         sb.Append("There's a rooom to your SOUTH.");
                     }
@@ -69,7 +70,7 @@ public class Game
 
                 // OVEST
                 case 3:
-                    if (CurrentRoom.ConnectedRooms[3] != null)
+                    if (CurrentRoom.ConnectedRooms[3] != string.Empty)
                     {
                         sb.Append("There's a rooom to your WEST.");
                     }
@@ -94,7 +95,7 @@ public class Game
 
         if (PlayerBag.Count < 1)
         {
-            sb.Append("Currently, your bag is empty");
+            sb.Append("Currently, your bag is empty \n");
         }
         else
         {
@@ -109,5 +110,6 @@ public class Game
 
         Console.ForegroundColor = ConsoleColor.Magenta;
         Console.WriteLine(sb.ToString());
+        sb.Clear();
     }
 }
