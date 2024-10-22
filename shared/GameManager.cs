@@ -134,11 +134,11 @@ public static class GameManager
                 break;
 
             case Constants.PICK_COMMAND:
-                Console.WriteLine(userCommand);
                 game = HandlePickCommand(game, userCommand);
                 break;
 
             case Constants.DROP_COMMAND:
+                game = HandleDropCommand(game, userCommand);
                 break;
 
             case Constants.EXIT_COMMAND:
@@ -149,6 +149,7 @@ public static class GameManager
                 break;
 
             case Constants.LOOK_COMMAND:
+                game.GetRoomDescription();
                 break;
 
             default:
@@ -162,16 +163,40 @@ public static class GameManager
     {
         string commandParameter = userCommand.TrimStart().TrimEnd().Substring(4);
         string itemToPick = commandParameter.TrimStart().TrimEnd();
-
+        GameItem itemToRemove = null;
         foreach (GameItem item in game.CurrentRoom.Items)
         {
-            if (item.Name == itemToPick)
+            if (item.Name.ToLower() == itemToPick.ToLower())
             {
                 game.PlayerBag.Add(item);
-                game.CurrentRoom.Items.Remove(item);
+                itemToRemove = item;
             }
         }
+        
+        if(itemToRemove != null)
+            game.CurrentRoom.Items.Remove(itemToRemove);
+        
+        return game;
+    }
 
+    private static Game HandleDropCommand(Game game, string userCommand)
+    {
+        string commandParameter = userCommand.TrimStart().TrimEnd().Substring(4);
+        string itemToDrop = commandParameter.TrimStart().TrimEnd();
+        GameItem itemToRemove = null;
+
+        foreach (GameItem item in game.PlayerBag)
+        {
+            if (item.Name.ToLower() == itemToDrop.ToLower())
+            {
+                game.CurrentRoom.Items.Add(item);
+                itemToRemove = item;
+            }
+        }
+        
+        if(itemToRemove != null)
+            game.PlayerBag.Remove(itemToRemove);
+        
         return game;
     }
 }
