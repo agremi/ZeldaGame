@@ -1,5 +1,4 @@
-﻿using System.Text.RegularExpressions;
-using ZeldaGame.models;
+﻿using ZeldaGame.models;
 using ZeldaGame.shared;
 
 Game currentGame = GameManager.StartGame();
@@ -9,4 +8,13 @@ while (currentGame.CurrentCommand != Constants.EXIT_COMMAND)
     currentGame = GameManager.HandleUserCommand(Console.ReadLine() ?? string.Empty, currentGame);
 }
 
-Console.WriteLine("I'm leaving");
+if (currentGame.IsPrincessSaved)
+{
+    string message = GameManager.OpenFile("assets/EndWin") ?? "You won";
+    Console.WriteLine(message);
+}
+else
+{
+    string message = GameManager.OpenFile("assets/EndLose") ?? "You lost";
+    Console.WriteLine(message);
+}

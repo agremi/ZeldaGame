@@ -1,119 +1,147 @@
 [
     {
         "Name": "Room1",
-        "Description": "The room description",
-        "Items": [
-            {
-                "Name": "first item",
-                "Value": 0
-            }
+        "Description": "A vast chamber with crumbling stone walls covered in thick moss. The faint glow of enchanted torches flickers across faded murals, depicting battles fought long ago. The air is damp, carrying a lingering sense of ancient magic.",
+        "Items": [],
+        "Npc": null,
+        "ConnectedRooms": [
+            "",
+            "Room2",
+            "Room4",
+            ""
         ],
-        "Npc": {
-            "Name": "",
-            "WeaponToKillIt": "",
-            "IsEvil": true
-        },
-        "ConnectedRooms": ["","Room2","",""],
         "IsHidden": false
     },
     {
-            "Name": "Room2",
-            "Description": "The second room description",
-            "Items": [
-                {
-                    "Name": "Golden egg",
-                    "Value": 500000
-                }
-            ],
-            "Npc": {
-                "Name": "",
-                "WeaponToKillIt": "",
-                "IsEvil": true
-            },
-            "ConnectedRooms": ["","","","Room1"]
+        "Name": "Room2",
+        "Description": "Shadows dance along the walls of this cavern, where narrow beams of moonlight pierce through cracks in the ceiling. On the damp stone floor lies a golden egg, its surface gleaming faintly as if it holds a hidden power. Pools of dark water ripple nearby, adding to the cavern's eerie atmosphere.",
+        "Items": [
+            {
+                "Name": "Golden egg",
+                "Value": 500000
+            }
+        ],
+        "Npc": null,
+        "ConnectedRooms": [
+            "",
+            "Room3",
+            "Room5",
+            "Room1"
+        ]
+    },
+    {
+        "Name": "Room3",
+        "Description": "A circular room with a high domed ceiling, filled with intricate carvings depicting ancient guardians. A magic shield rests against the base of the central stone statue, its surface glowing with a faint blue light. It seems to hum with protective energy, as though waiting for a worthy hero to claim it.",
+        "Items": [
+            {
+                "Name": "Magic shield",
+                "Value": 0
+            }
+        ],
+        "Npc": null,
+        "ConnectedRooms": [
+            "",
+            "",
+            "",
+            "Room2"
+        ]
+    },
+    {
+        "Name": "Room4",
+        "Description": " Rows of ancient stone coffins line the walls, their lids etched with mysterious runes. Amid the dust and decay, a golden chalice rests on a small stone pedestal, its surface encrusted with jewels that catch the dim light. The air feels thick, as if the spirits guard this relic fiercely.",
+        "Items": [
+            {
+                "Name": "Golden chalice",
+                "Value": 500000
+            }
+        ],
+        "Npc": null,
+        "ConnectedRooms": [
+            "Room1",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "Name": "Room5",
+        "Description": "The heat is overwhelming in this room, where molten lava flows through carved channels in the floor. In the center stands Medusa, her snake-like hair writhing as her piercing gaze threatens to turn onlookers to stone. Surrounding her are piles of petrified adventurers who failed to avert their eyes.",
+        "Items": [],
+        "Npc": {
+            "Name": "Medusa",
+            "WeaponToKillIt": "Magic shield",
+            "IsEvil": true
         },
-        {
-            "Name": "Room3",
-            "Description": "",
-            "Items": [
-                {
-                    "Name": "Magic shield",
-                    "Value": 0
-                }
-            ],
-            "Npc": {
-                "Name": "",
-                "WeaponToKillIt": "",
-                "IsEvil": true
-            },
-            "ConnectedRooms": []
+        "ConnectedRooms": [
+            "Room2",
+            "Room6",
+            "",
+            ""
+        ]
+    },
+    {
+        "Name": "Room6",
+        "Description": "The twisting corridors are filled with dense mist that makes it difficult to see more than a few feet ahead. Dracula lurks in the shadows, his crimson eyes glowing faintly through the fog. His presence sends chills down your spine as his voice echoes through the labyrinth, taunting you to come closer.",
+        "Items": [],
+        "Npc": {
+            "Name": "Mr. Dracula",
+            "WeaponToKillIt": "Silver dagger"
         },
+        "ConnectedRooms": [
+            "",
+            "",
+            "Room9",
+            "Room5"
+        ]
+    },
+    {
+        "Name": "Room7",
+        "Description": "Dusty bookshelves line the walls, filled with ancient tomes and scrolls. Cobwebs drape across the ceiling, and a cold draft blows through, stirring the yellowed pages of forgotten knowledge. In the center of the room sits the princess, bound in enchanted chains that seem to drain the strength from her. Her eyes are filled with a mix of hope and fear as she awaits rescue.",
+        "Items": [
+            {
+                "Name": "Silver dagger",
+                "Value": 0
+            }
+        ],
+        "Npc": null,
+        "ConnectedRooms": [
+            "",
+            "Room8",
+            "",
+            ""
+        ]
+    },
+    {
+        "Name": "Room8",
+        "Description": "The floor is partially submerged in murky water, with scattered stone pillars rising above the surface. A piece of paper floats on the water, drifting slowly with the faint current. Its edges are damp and curling, with smudged writing that appears to be a cryptic message or a set of directions waiting to be deciphered.",
+        "Items": [
+            {
+                "Name": "Mathematical proof",
+                "Value": 1000000
+            }
+        ],
+        "Npc": null,
+        "ConnectedRooms": [
+            "Room5",
+            "",
+            "",
+            "Room7"
+        ]
+    },
         {
-            "Name": "Room4",
-            "Description": "",
-            "Items": [
-                {
-                    "Name": "Golden chalice",
-                    "Value": 500000
-                }
-            ],
-            "Npc": {
-                "Name": "",
-                "WeaponToKillIt": "",
-                "IsEvil": true
-            },
-            "ConnectedRooms": []
+        "Name": "Room9",
+        "Description": "Dusty bookshelves line the walls, filled with ancient tomes and scrolls. Cobwebs drape across the ceiling, and a cold draft blows through, stirring the yellowed pages of forgotten knowledge. In the middle of the room, the princess is seated, bound by enchanted chains that emit a faint glow. Her eyes are filled with a mixture of hope and fear as she awaits her rescue from this place of forgotten lore.",
+        "Items": [],
+        "Npc": {
+            "Name": "Princess",
+            "WeaponToKillIt": null,
+            "IsEvil": false
         },
-        {
-            "Name": "Room5",
-            "Description": "",
-            "Items": [],
-            "Npc": {
-                "Name": "Medusa",
-                "WeaponToKillIt": "Magic shield"
-            },
-            "ConnectedRooms": []
-        },
-        {
-            "Name": "Room6",
-            "Description": "",
-            "Items": [],
-            "Npc": {
-                "Name": "Mr. Dracula",
-                "WeaponToKillIt": "Silver dagger"
-            },
-            "ConnectedRooms": []
-        },
-        {
-            "Name": "Room7",
-            "Description": "",
-            "Items": [
-                {
-                    "Name": "Silver dagger",
-                    "Value": 0
-                }
-            ],
-            "Npc": {
-                "Name": "",
-                "WeaponToKillIt": "",
-                "IsEvil": true
-            },
-            "ConnectedRooms": []
-        },
-        {
-            "Name": "Room8",
-            "Description": "",
-            "Items": [
-                {
-                    "Name": "Mathematical proof",
-                    "Value": 1000000
-                }
-            ],
-            "Npc": {
-                "Name": "",
-                "WeaponToKillIt": "",
-                "IsEvil": false
-            },
-            "ConnectedRooms": []
-        }
+        "ConnectedRooms": [
+            "Room6",
+            "",
+            "",
+            ""
+        ]
+    }
 ]

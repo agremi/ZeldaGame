@@ -21,7 +21,7 @@ public class Game
     public List<Room>? RoomsList { get; set; }
     public float PlayerCash { get; set; }
     public string CurrentCommand { get; set; } = string.Empty;
-
+    public bool IsPrincessSaved { get; set; }
     public void GetRoomDescription()
     {
         StringBuilder sb = new StringBuilder();

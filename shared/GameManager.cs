@@ -19,7 +19,7 @@ public static class GameManager
         Console.WriteLine(opening);
     }
 
-    private static string OpenFile(string path)
+    public static string OpenFile(string path)
     {
         try
         {
@@ -81,7 +81,7 @@ public static class GameManager
                 currentGame = HandleDirection(currentGame, commandParameter, 0);
                 break;
 
-            case Constants.MOVE_WEST:
+            case Constants.MOVE_EAST:
                 currentGame = HandleDirection(currentGame, commandParameter, 1);
                 break;
 
@@ -89,7 +89,7 @@ public static class GameManager
                 currentGame = HandleDirection(currentGame, commandParameter, 2);
                 break;
 
-            case Constants.MOVE_EAST:
+            case Constants.MOVE_WEST:
                 currentGame = HandleDirection(currentGame, commandParameter, 3);
                 break;
 
@@ -112,6 +112,11 @@ public static class GameManager
             if (targetRoom != null)
             {
                 currentGame.CurrentRoom = targetRoom;
+
+                if (targetRoom.Name.Equals("Room9"))
+                {
+                    currentGame.IsPrincessSaved = true;
+                }
             }
         }
         else
@@ -146,6 +151,7 @@ public static class GameManager
                 break;
 
             case Constants.ATTACK_COMMAND:
+                game = HandleAttackCommand(game);
                 break;
 
             case Constants.LOOK_COMMAND:
@@ -172,10 +178,10 @@ public static class GameManager
                 itemToRemove = item;
             }
         }
-        
-        if(itemToRemove != null)
+
+        if (itemToRemove != null)
             game.CurrentRoom.Items.Remove(itemToRemove);
-        
+
         return game;
     }
 
@@ -193,10 +199,52 @@ public static class GameManager
                 itemToRemove = item;
             }
         }
-        
-        if(itemToRemove != null)
+
+        if (itemToRemove != null)
             game.PlayerBag.Remove(itemToRemove);
-        
+
+        return game;
+    }
+
+    private static Game HandleAttackCommand(Game game)
+    {
+        if (game.CurrentRoom.Npc != null && game.CurrentRoom.Npc.IsEvil)
+        {
+            if (game.PlayerBag.Count < 1)
+            {
+                game.CurrentCommand = Constants.EXIT_COMMAND;
+                string endDead = OpenFile("assets/EndDead.txt") ?? "Wasted";
+                Console.WriteLine(endDead);
+            }
+            foreach (GameItem item in game.PlayerBag)
+            {
+                if (game.CurrentRoom.Npc.WeaponToKillIt == item.Name)
+                {
+                    Console.WriteLine($"You defeated {game.CurrentRoom.Npc.Name}");
+                    // appare nuova porta
+                    if (game.CurrentRoom.Name == "Room5")
+                    {
+                        game.CurrentRoom.ConnectedRooms[2] = "Room8";
+                        Console.WriteLine("A new door appears at your south");
+                    }
+                    else if (game.CurrentRoom.Name == "Room6")
+                    {
+                        game.CurrentRoom.ConnectedRooms[2] = "Room8";
+                        Console.WriteLine("A new door appears at your south");
+                    }
+                }
+                else
+                {
+                    string closingtext = OpenFile("assets/EndDead");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(closingtext);
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("There is no one to kill here");
+        }
         return game;
     }
 }
