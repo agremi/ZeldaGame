@@ -85,12 +85,13 @@
         "Items": [],
         "Npc": {
             "Name": "Mr. Dracula",
-            "WeaponToKillIt": "Silver dagger"
+            "WeaponToKillIt": "Silver dagger",
+            "IsEvil": true
         },
         "ConnectedRooms": [
             "",
             "",
-            "Room9",
+            "",
             "Room5"
         ]
     },

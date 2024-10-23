@@ -216,9 +216,8 @@ public static class GameManager
                 string endDead = OpenFile("assets/EndDead.txt") ?? "Wasted";
                 Console.WriteLine(endDead);
             }
-            foreach (GameItem item in game.PlayerBag)
-            {
-                if (game.CurrentRoom.Npc.WeaponToKillIt == item.Name)
+                GameItem item = game.PlayerBag.FirstOrDefault(item => item.Name.Equals(game.CurrentRoom.Npc.WeaponToKillIt));
+                if (item != null)
                 {
                     Console.WriteLine($"You defeated {game.CurrentRoom.Npc.Name}");
                     // appare nuova porta
@@ -229,18 +228,18 @@ public static class GameManager
                     }
                     else if (game.CurrentRoom.Name == "Room6")
                     {
-                        game.CurrentRoom.ConnectedRooms[2] = "Room8";
+                        game.CurrentRoom.ConnectedRooms[2] = "Room9";
                         Console.WriteLine("A new door appears at your south");
                     }
                 }
                 else
                 {
-                    string closingtext = OpenFile("assets/EndDead");
+                    string closingtext = OpenFile("assets/EndDead.txt");
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine(closingtext);
                 }
             }
-        }
+        
         else
         {
             Console.WriteLine("There is no one to kill here");

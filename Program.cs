@@ -10,11 +10,11 @@ while (currentGame.CurrentCommand != Constants.EXIT_COMMAND)
 
 if (currentGame.IsPrincessSaved)
 {
-    string message = GameManager.OpenFile("assets/EndWin") ?? "You won";
+    string message = GameManager.OpenFile("assets/EndWin.txt") ?? "You won";
     Console.WriteLine(message);
 }
 else
 {
-    string message = GameManager.OpenFile("assets/EndLose") ?? "You lost";
+    string message = GameManager.OpenFile("assets/EndLose.txt") ?? "You lost";
     Console.WriteLine(message);
 }
